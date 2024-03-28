@@ -1,0 +1,19 @@
+1. Sebutkan perbedaan natara data warehouse dan data lake
+Data lake adalah tempat peyimpanan yang besar dan fleksibel untuk seluruh jenis data, terstruktur, semi-struktur, dan tidak terstruktur.
+
+Data Warehouse adalah tempat untuk mengelola data yang sudah terstruktur dari berbagai sumber untuk melakukan sebuah analisa.
+
+2. Apa yang membedakan teknologi database untuk data warehouse (OLAP) dari teknologi database konvensional (OLTP)?
+
+OLTP digunakan untuk proses harian yang cepat dan banyak, lebih kepada penjalanan operasi read, write, dan update data secara langsung
+
+OLAP digunakan untuk menganalisis data banyak untuk membantu dalam business process, lebih kepada operasi analitik yang kompleks
+
+3. Teknologi apa saja yang biasanya dipakai untuk data warehouse?
+AWS Redshift
+Google Big Query
+Clickhose
+Snowlfake
+Databricks
+Apache Dorris
+Postgre( dengan extension Citus)
