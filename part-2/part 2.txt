@@ -1,0 +1,32 @@
+1, jalan kan citus di komputer lokal dengan menggunakan docker compose
+
+Saya menggunakan line berikut untuk menjalankan citus:
+
+docker run -d --name citus -p 5500:5432 -e POSTGRES_PASSWORD=1 citusdata/citus
+
+Saya melakukan command docker run dalam mode detached dengan membeli nama container citus melalui port 5500 di host machine dan port 5432 dalam container. Password yang saya memakai adalah 1 dan nama image yang saya tarik adalah citusdata/citus.
+
+saya melakukan semua melalui terminal sehingga saya melakukan ini:
+
+docker exec -it citus psql -U postgres
+
+untuk menjalankan postgres melalui terminal dengan container citus
+
+2. tuliskan perintah untuk membuat 
+a. table biasa
+saya mengcopy isi data dari jawaban b
+
+--create a row-based table to compare
+CREATE TABLE events_row AS SELECT * FROM events_columnar;
+
+b. columnar table
+CREATE TABLE events_columnar(
+	device_id bigint,
+	event_id bigserial,
+	event_time timestamptz default now(),
+	data jsonb not null
+)
+USING columnar;
+
+5.Tuliskan kesimpulan
+dengan melakukan metode columnar file size akan menjadi lebih kecil daripada table biasa.
